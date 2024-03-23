@@ -1,9 +1,11 @@
+/* This PHP code snippet is displaying a list of products fetched from a database. Here's a breakdown
+of what each part of the code does: */
 <?php
 require_once('entities/product.class.php');
 ?>
 <?php
 include_once('header.php');
-$prods = Product::list_product();
+$prods = Product::list_product(); // * GET PRODUCT FROM DATABASE
 ?>
 <div class="container">
     <div class="row">

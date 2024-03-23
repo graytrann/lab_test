@@ -1,3 +1,4 @@
+/* The Product class in PHP defines properties and methods for managing product data in a database. */
 <?php
 require_once("config/db.class.php");
 
@@ -26,7 +27,7 @@ class Product
         $this->description = $desc;
         $this->picture = $picture;
     }
-    //Save product
+    // * Save product
     public function save()
     {
         // Initialize $db object with class Db from file db.class.php
@@ -46,7 +47,7 @@ class Product
         // Return results
         return $result;
     }
-    // List of products
+    // *  List of products
     public static function list_product()
     {
         $db = new DB();

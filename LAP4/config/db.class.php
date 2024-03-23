@@ -1,13 +1,16 @@
+/* The above class `Db` in PHP handles database connection, query execution, and fetching results into
+an array. */
 <?php
 class Db
 {
-    //Database connection variable
+    //*Database connection variable
     protected static $connection;
 
 
-    //Connection initialization function
+    //*Connection initialization function
     public function connect()
     {
+        // ! input correct information of database phpAdmin
         $connection = mysqli_connect(
             "localhost",
             "root",
@@ -16,14 +19,14 @@ class Db
         );
 
         mysqli_set_charset($connection, 'utf8');
-        // Check connection
+        // * Check connection
         if (mysqli_connect_errno()) {
             echo "Database connection failed: " . mysqli_connect_error();
         }
         return $connection;
     }
 
-    //The function executes the query statement
+    //*The function executes the query statement
     public function query_execute($queryString)
     {
         //Initiate connection
@@ -34,7 +37,7 @@ class Db
         return $result;
     }
 
-    //The implementation function returns an array of result lists
+    //*The implementation function returns an array of result lists
     public function select_to_array($queryString)
     {
         $rows = array();

@@ -1,3 +1,7 @@
+/* This code snippet is an HTML document with embedded PHP code. It creates a form for inputting
+student scores in Mathematics, Physics, Chemistry, and selecting an area. Upon submitting the form,
+it calculates the total points, provides a rating based on the total points, and assigns priority
+points based on the selected area. */
 <!DOCTYPE html>
 <html>
 
@@ -15,23 +19,17 @@
         <h2> CLASSIFICATION OF STUDENT RESULTS</h2>
         <!-- Form to send processing results -->
         <!-- action is the landing page, the # value is sent to the
-
 current page itself.
 The method is post. -->
+        // * INPUT FORM
         <form action="#" method="post">
-            <!-- Mathematics -->
+            // * Mathematics
             <div class="row">
                 <div class="lbltitle">
                     <label> Math scores </label>
                 </div>
                 <div class="lblinput">
-                    <!-- name="math" is the variable name sent to the
 
-server,
-
-isset($_POST['math']) check if the variable is defined
-
-or not -->
 
                     <input type="number" name="math" value="<?php echo isset($_POST['math']) ?
 
@@ -39,7 +37,7 @@ or not -->
                 </div>
             </div>
 
-            <!-- Physics -->
+            // * Physics
             <div class="row">
                 <div class="lbltitle">
                     <label> Physics scores</label>
@@ -51,7 +49,7 @@ or not -->
 
                 </div>
             </div>
-            <!-- Chemistry -->
+            // * Chesmistry
             <div class="row">
                 <div class="lbltitle">
                     <label> Chemistry scores</label>
@@ -79,7 +77,7 @@ or not -->
                 </div>
             </div>
 
-            <!-- Form send button, command button to send results -->
+            // * BUTTON SUBMIT
             <div class="row">
                 <div class="submit">
                     <input type="submit" name="btnsubmit" value="Ratings" />
@@ -88,16 +86,16 @@ or not -->
             </div>
         </form>
     </div>
-    <!-- Display results -->
+    // * Display result ----------------------------------------------
     <div class="result">
         <h2>Rating results</h2>
         <div class="row">
             <div class="lbltitle">
                 <label>Total points</label>
             </div>
+            // * OUTPUT TOTAL POINTS
             <div class="lbloutput">
                 <?php echo isset($_POST['btnsubmit']) ? $_POST['math']
-
                     + $_POST['physics'] + $_POST['chemistry'] : ""; ?>
 
             </div>
@@ -107,6 +105,7 @@ or not -->
         <div class="lbltitle">
             <label>Rating</label>
         </div>
+        // * OUTPUT RATINGS
         <div class="lbloutput">
             <?php
 
@@ -129,10 +128,13 @@ or not -->
         <div class="lbltitle">
             <label for="">Priority point</label>
         </div>
+        // * OUTPUT PRIORITY POINTS
         <div class="lbloutput">
             <?php
             if (isset($_POST["btnsubmit"])) {
                 $prioritypoint_points = $_POST["area"];
+                // * check priority_points
+                // ? Is there another way to check $prioritypoint_points
                 switch ($prioritypoint_points) {
                     case 0:
                     case 4:

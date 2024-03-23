@@ -1,3 +1,5 @@
+/* This PHP code snippet is for adding a new product to a database. Here's a breakdown of what the code
+does: */
 <?php
 require_once("entities/product.class.php");
 require_once('entities/category.class.php');
@@ -45,7 +47,7 @@ if (isset($_GET["status"])) {
     }
 }
 ?>
-<!-- Form Add products -->
+// * Form Add Products
 <form method="post" enctype="multipart/form-data">
     <!-- Product's name -->
     <div class="row">
@@ -59,7 +61,7 @@ if (isset($_GET["status"])) {
 
         </div>
     </div>
-    <!-- Product Description -->
+    // * Product Description
     <div class="row">
         <div class="lbltitle">
             <label> Product Description </label>
@@ -69,7 +71,7 @@ if (isset($_GET["status"])) {
                                                                             ?>"></textarea>
         </div>
     </div>
-    <!-- The number of products -->
+    // * The number of products
     <div class="row">
         <div class="lbltitle">
             <label> The number of products </label>
@@ -81,7 +83,7 @@ if (isset($_GET["status"])) {
 
         </div>
     </div>
-    <!-- Product price -->
+    // * Product price
     <div class="row">
         <div class="lbltitle">
             <label> Product price </label>
@@ -93,7 +95,7 @@ if (isset($_GET["status"])) {
 
         </div>
     </div>
-    <!-- Product Type -->
+    // * Product Type
     <div class="row">
         <div class="lbltitle">
             <label> Product Type </label>
@@ -116,7 +118,7 @@ if (isset($_GET["status"])) {
 
         </div>
     </div>
-    <!-- Product Type -->
+    // * Product IMAGE 
     <div class="row">
         <div class="lbltitle">
             <label>Url Image</label>
@@ -135,5 +137,5 @@ if (isset($_GET["status"])) {
     </div>
 </form>
 
-<!-- Footer -->
+// * FOOTER
 <?php require 'footer.php'; ?>

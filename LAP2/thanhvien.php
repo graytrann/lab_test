@@ -1,3 +1,5 @@
+/* The above PHP class defines a member with properties for fullname, email, and idmember, utilizing a
+constructor to initialize these properties and a destructor to clean up resources. */
 <?php
 require_once("hotro.php");
 
@@ -10,6 +12,7 @@ class member
     {
         $this->fullname = $fullname;
         $this->email = $email;
+        // * idcontinue() function from hotro.php
         $this->idmember = idcontinue();
     }
 

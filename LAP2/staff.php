@@ -1,3 +1,5 @@
+/* The `staff` class extends the `character` class and generates a unique staff code for each instance
+based on a static counter. */
 <?php
 require_once("character.php");
 
@@ -8,6 +10,7 @@ class staff extends character
 
     public function __construct($fullname_staff, $countrycode, $part)
     {
+         // ? Should check input is valid or not
         parent::__construct($fullname_staff, $countrycode);
         $this->part = $part;
         $this->staffcode = $this->staffcode_continue();
@@ -25,6 +28,8 @@ class staff extends character
 
     final private function staffcode_continue()
     {
+        
+        // * first set userId is 1 and then +1 for following user
         static $makecode = 1;
         return $makecode++;
     }
